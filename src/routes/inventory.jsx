@@ -10,6 +10,9 @@ import ContentHome from "../component/content/contentHome.jsx";
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
+//import style
+import { GlobalStyles } from "../globalStyles";
+
 // Firebase web app configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA3cOgFcizEZPRapS7_8JCPnRYrAdedQHc",
@@ -55,7 +58,7 @@ export default function Inventory() {
     console.log("senttt haha", res);
   };
   return (
-    <div style={styles.safeArea}>
+    <div style={GlobalStyles.safeArea}>
       <Headers title="Inventory : " />
       <ContentAreaView>
         <label>
@@ -97,14 +100,6 @@ export default function Inventory() {
 }
 
 const styles = {
-  safeArea: {
-    padding: "20px 50px",
-    display: "flex",
-    width: "100%",
-    height: "100%",
-    scrollBehaviour: "smooth",
-    flexDirection: "column",
-  },
   homeContent: { width: "100%", height: "80%", padding: "10px 10px" },
 
   button: { width: "100px", height: "100px" },

@@ -39,15 +39,6 @@ export default function ModuleFullList() {
 }
 
 const styles = {
-  safeArea: {
-    display: "flex",
-    flexDirection: "column",
-    padding: "20px 50px",
-    display: "flex",
-    maxHeight: "100%",
-    scrollBehaviour: "smooth",
-  },
-
   moduleButtonsContainer1: {
     position: "sticky",
     display: "flex",

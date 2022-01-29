@@ -1,8 +1,9 @@
 import Headers from "../component/content/headers.jsx";
-
+//import style
+import { GlobalStyles } from "../globalStyles";
 export default function CivDots() {
   return (
-    <div style={styles.safeArea}>
+    <div style={GlobalStyles.safeArea}>
       <Headers title={"Civ Dots :"} />
       <div style={styles.civDotContainer1}>
         <div style={styles.civDotContainer2}>
@@ -19,15 +20,6 @@ export default function CivDots() {
 }
 
 const styles = {
-  safeArea: {
-    display: "flex",
-    flexDirection: "column",
-    padding: "20px 50px",
-    display: "flex",
-    height: "100%",
-    width: "100%",
-  },
-
   civDotContainer1: {
     display: "flex",
     flexDirection: "column",

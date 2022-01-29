@@ -4,9 +4,12 @@ import ContentAreaView from "./contentAreaView";
 import HomeTab from "./homeTabs";
 import Headers from "./headers";
 
+//import style
+import { GlobalStyles } from "../../globalStyles";
+
 export default function ContentHome() {
   return (
-    <div style={styles.safeArea}>
+    <div style={GlobalStyles.safeArea}>
       <Headers title="Home : " />
       <div style={styles.homeContentContainer}>
         <ContentAreaView>
@@ -16,7 +19,7 @@ export default function ContentHome() {
         <ContentAreaView>
           <HomeTab title="Inventory" />
           <HomeTab title="To Buy List" />
-          <HomeTab title="Developing?" />
+          <HomeTab title="tester" />
         </ContentAreaView>
       </div>
     </div>
@@ -24,13 +27,5 @@ export default function ContentHome() {
 }
 
 const styles = {
-  safeArea: {
-    padding: "20px 50px",
-    display: "flex",
-    width: "100%",
-    height: "100%",
-    scrollBehaviour: "smooth",
-    flexDirection: "column",
-  },
   homeContentContainer: { width: "100%", height: "80%", padding: "10px 10px" },
 };

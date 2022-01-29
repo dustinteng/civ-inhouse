@@ -7,9 +7,12 @@ import ContentAreaView from "../component/content/contentAreaView";
 import Headers from "../component/content/headers";
 import ContentHome from "../component/content/contentHome.jsx";
 
+//import style
+import { GlobalStyles } from "../globalStyles";
+
 export default function ToBuyList() {
   return (
-    <div style={styles.safeArea}>
+    <div style={GlobalStyles.safeArea}>
       <Headers title="To Buy List : " />
       <ContentAreaView></ContentAreaView>
     </div>
@@ -17,13 +20,5 @@ export default function ToBuyList() {
 }
 
 const styles = {
-  safeArea: {
-    padding: "20px 50px",
-    display: "flex",
-    width: "100%",
-    height: "100%",
-    scrollBehaviour: "smooth",
-    flexDirection: "column",
-  },
   homeContent: { width: "100%", height: "80%", padding: "10px 10px" },
 };

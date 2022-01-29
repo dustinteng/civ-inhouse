@@ -9,11 +9,14 @@ import PopUpWindow from "../component/content/modulesPopUpWindow.jsx";
 
 import { usePopUpStatus } from "../component/content/popUpWindowContext.jsx";
 
+//import style
+import { GlobalStyles } from "../globalStyles";
+
 export default function Modules() {
   const popUpState = usePopUpStatus();
 
   return (
-    <div style={styles.safeArea}>
+    <div style={GlobalStyles.safeArea}>
       <Headers title={"Modules :"} />
       <div style={styles.moduleButtonContainer}>
         {popUpState ? <PopUpWindow /> : <ModuleFullList />}
@@ -23,15 +26,6 @@ export default function Modules() {
 }
 
 const styles = {
-  safeArea: {
-    display: "flex",
-    flexDirection: "column",
-    padding: "20px 50px",
-    display: "flex",
-    height: "100%",
-    width: "100%",
-  },
-
   moduleButtonContainer: {
     width: "100%",
     height: "80%",

@@ -9,6 +9,7 @@ import Modules from "./routes/modules";
 import Inventory from "./routes/inventory.jsx";
 import CivDots from "./routes/civdots";
 import ToBuyList from "./routes/toBuyList";
+import DropDownTest from "./firebase/dropDownTemplate";
 
 import { PopUpProvider } from "./component/content/popUpWindowContext";
 import {
@@ -31,6 +32,7 @@ export default function App() {
             Inventory: <Inventory />,
             CivDots: <CivDots />,
             "To Buy List": <ToBuyList />,
+            tester: <DropDownTest />,
           }[curWindow] || <ContentHome />}
         </div>
       </PopUpProvider>
