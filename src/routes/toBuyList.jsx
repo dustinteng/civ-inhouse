@@ -1,11 +1,7 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-
 import React from "react";
 import ContentAreaView from "../component/content/contentAreaView";
 
-import Headers from "../component/content/headers";
-import ContentHome from "../component/content/contentHome.jsx";
+import PageHeaders from "../component/content/pageHeaders";
 
 //import style
 import { GlobalStyles } from "../globalStyles";
@@ -13,7 +9,7 @@ import { GlobalStyles } from "../globalStyles";
 export default function ToBuyList() {
   return (
     <div style={GlobalStyles.safeArea}>
-      <Headers title="To Buy List : " />
+      <PageHeaders title="To Buy List : " />
       <ContentAreaView></ContentAreaView>
     </div>
   );
