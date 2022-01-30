@@ -1,10 +1,6 @@
-import { Outlet, Link } from "react-router-dom";
-import { useState } from "react";
-
 import NavigationWindow from "./component/navigation/navigationWindow";
-import ContentHome from "./component/content/contentHome.jsx";
+import ContentHome from "./component/content/contentHome";
 
-import Box from "./routes/modules/box";
 import Modules from "./routes/modules";
 import Inventory from "./routes/inventory.jsx";
 import CivDots from "./routes/civdots";

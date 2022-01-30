@@ -1,27 +1,20 @@
-//drop down menu file
+import { useState } from "react";
 
-import React from "react";
+export const Dropdown = (props) => {
+  const [value, setValue] = useState("one"); //default value
 
-import {
-  DropdownWrapper,
-  StyledSelect,
-  StyledOption,
-  StyledLabel,
-  StyledButton,
-} from "./styles.jsx";
+  function handleSelectChange(event) {
+    setValue(event.target.value);
+  }
 
-export function Dropdown(props) {
   return (
-    <DropdownWrapper action={props.action}>
-      <StyledLabel htmlFor="services">{props.formLabel}</StyledLabel>
-      <StyledSelect id="services" name="services">
+    <div>
+      <select value={value} onChange={handleSelectChange}>
+        {" "}
+        //set value here
         {props.children}
-      </StyledSelect>
-      <StyledButton type="submit" value={props.buttonText} />
-    </DropdownWrapper>
+      </select>
+      <p>the value is {value}</p>
+    </div>
   );
-}
-
-export function Option(props) {
-  return <StyledOption selected={props.selected}>{props.value}</StyledOption>;
-}
+};

@@ -1,11 +1,8 @@
-import { Link } from "react-router-dom";
+import React from "react";
 import { useState } from "react";
 
-import React from "react";
 import ContentAreaView from "../component/content/contentAreaView.jsx";
-
 import Headers from "../component/content/headers.jsx";
-import ContentHome from "../component/content/contentHome.jsx";
 
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
@@ -69,6 +66,7 @@ export default function Inventory() {
           {" "}
           Item Category:
           <input onChange={(event) => setItemCategory(event.target.value)} />
+          <p>item category {itemCategory}</p>
         </label>
         <label>
           {" "}

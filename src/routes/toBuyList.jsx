@@ -1,7 +1,7 @@
 import React from "react";
 import ContentAreaView from "../component/content/contentAreaView";
 
-import PageHeaders from "../component/content/pageHeaders";
+import Headers from "../component/content/headers";
 
 //import style
 import { GlobalStyles } from "../globalStyles";
@@ -9,7 +9,7 @@ import { GlobalStyles } from "../globalStyles";
 export default function ToBuyList() {
   return (
     <div style={GlobalStyles.safeArea}>
-      <PageHeaders title="To Buy List : " />
+      <Headers title="To Buy List : " />
       <ContentAreaView></ContentAreaView>
     </div>
   );
