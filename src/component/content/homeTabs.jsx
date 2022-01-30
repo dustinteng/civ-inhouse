@@ -1,6 +1,6 @@
 import React from "react";
 import { useCurWindowUpdateState } from "./contentWindowContext";
-import { usePopUpUpdateStatus } from "./popUpWindowContext";
+import { usePopUpUpdateStatus } from "../../context/popUpWindowContext";
 
 export default function HomeTab(props) {
   const title = props.title;

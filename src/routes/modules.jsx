@@ -5,9 +5,9 @@ import Headers from "../component/content/headers.jsx";
 // import ModuleButton from "../component/content/moduleButton.jsx";
 
 import ModuleFullList from "./modules/moduleFullList.jsx";
-import PopUpWindow from "../component/content/modulesPopUpWindow.jsx";
+import PopUpWindow from "./modules/modulesPopUpWindow.jsx";
 
-import { usePopUpStatus } from "../component/content/popUpWindowContext.jsx";
+import { usePopUpStatus } from "../context/popUpWindowContext.jsx";
 
 //import style
 import { GlobalStyles } from "../globalStyles";

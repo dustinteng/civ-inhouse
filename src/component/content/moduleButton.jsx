@@ -5,7 +5,7 @@ import {
   usePopUpUpdateStatus,
   usePopUpContent,
   usePopUpUpdateContent,
-} from "./popUpWindowContext.jsx";
+} from "../../context/popUpWindowContext.jsx";
 
 export default function ModuleButton(props) {
   const popUpWindowUpdateState = usePopUpUpdateStatus();

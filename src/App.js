@@ -7,7 +7,7 @@ import CivDots from "./routes/civdots";
 import ToBuyList from "./routes/toBuyList";
 import DropDownTest from "./firebase/dropDownTemplate";
 
-import { PopUpProvider } from "./component/content/popUpWindowContext";
+import { PopUpProvider } from "./context/popUpWindowContext";
 import {
   ContextWindowProvider,
   useCurWindowState,

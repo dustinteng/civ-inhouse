@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 
-// importing home content
-import ContentHome from "./contentHome";
+import ContentHome from "../../component/content/contentHome";
+
 // importing all the contents
 import Antennas from "../../routes/modules/antennas";
 import ArduSimple from "../../routes/modules/ardusimple";
@@ -35,7 +35,7 @@ import PopUpProvider, {
   usePopUpUpdateStatus,
   usePopUpContent,
   usePopUpUpdateContent,
-} from "./popUpWindowContext";
+} from "../../context/popUpWindowContext";
 
 export default function PopUpWindow() {
   const togglePopUp = usePopUpUpdateStatus();

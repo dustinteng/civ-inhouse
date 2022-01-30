@@ -6,7 +6,7 @@ import {
   usePopUpUpdateStatus,
   usePopUpContent,
   usePopUpUpdateContent,
-} from "../content/popUpWindowContext.jsx";
+} from "../../context/popUpWindowContext.jsx";
 
 import { useCurWindowUpdateState } from "../content/contentWindowContext";
 
