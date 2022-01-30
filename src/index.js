@@ -7,7 +7,16 @@ import { ContextWindowProvider } from "./context/contentWindowContext";
 
 const rootElement = document.getElementById("root");
 render(
-  <body style={{ overflow: "hidden" }}>
+  <body
+    style={{
+      position: "absolute",
+      overflow: "hidden",
+      left: "0",
+      top: "0",
+      width: "100%",
+      height: "100vh",
+    }}
+  >
     <ContextWindowProvider>
       <BrowserRouter>
         <Routes>
