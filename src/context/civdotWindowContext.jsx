@@ -9,32 +9,32 @@ const CivDotContentContext = React.createContext();
 const CivDotUpdateContentContext = React.createContext();
 
 // creating functions
-export function usePopUpStatus() {
+export function useCivDotStatus() {
   return useContext(CivDotStateContext);
 }
 
-export function usePopUpUpdateStatus() {
+export function useCivDotUpdateStatus() {
   return useContext(CivDotUpdateStateContext);
 }
 
-export function usePopUpContent() {
+export function useCivDotContent() {
   return useContext(CivDotContentContext);
 }
 
-export function usePopUpUpdateContent() {
+export function useCivDotUpdateContent() {
   return useContext(CivDotUpdateContentContext);
 }
 
-export function PopUpProvider({ children }) {
-  const [isPopUpWindowOpen, setIsPopUpWindowOpen] = useState(false);
+export function CivDotProvider({ children }) {
+  const [isCivDotWindowOpen, setIsCivDotWindowOpen] = useState(false);
   function togglePopUp() {
-    setIsPopUpWindowOpen((cur) => !cur);
+    setIsCivDotWindowOpen((cur) => !cur);
   }
   const [curPopUpWindow, setCurPopUpWindow] = useState("home");
 
   return (
-    <CivDotStateContext.Provider value={isPopUpWindowOpen}>
-      <CivDotUpdateStateContext.Provider value={setIsPopUpWindowOpen}>
+    <CivDotStateContext.Provider value={isCivDotWindowOpen}>
+      <CivDotUpdateStateContext.Provider value={setIsCivDotWindowOpen}>
         <CivDotContentContext.Provider value={curPopUpWindow}>
           <CivDotUpdateContentContext.Provider value={setCurPopUpWindow}>
             {children}
