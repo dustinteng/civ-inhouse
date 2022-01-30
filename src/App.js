@@ -17,10 +17,10 @@ export default function App() {
   const curWindow = useCurWindowState();
   return (
     <div style={styles.all}>
+      <div style={styles.navWindow}>
+        <NavigationWindow />
+      </div>
       <ModuleProvider>
-        <div style={styles.navWindow}>
-          <NavigationWindow />
-        </div>
         <div style={styles.content}>
           {{
             Home: <ContentHome />,

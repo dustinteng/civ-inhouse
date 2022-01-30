@@ -5,15 +5,15 @@ import {
 } from "../../context/moduleWindowContext.jsx";
 
 export default function ModuleButton(props) {
-  const popUpWindowUpdateState = useModuleUpdateStatus();
-  const setCurPopUpWindow = useModuleUpdateContent();
+  const moduleWindowUpdateState = useModuleUpdateStatus();
+  const setCurModuleWindow = useModuleUpdateContent();
 
   const color = props.color;
   const title = props.title;
 
   function helperFunction() {
-    setCurPopUpWindow(title);
-    popUpWindowUpdateState(true);
+    setCurModuleWindow(title);
+    moduleWindowUpdateState(true);
   }
   return (
     <div style={styles.buttonsSAV}>
