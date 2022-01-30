@@ -1,18 +1,12 @@
 import React from "react";
 
-import {
-  PopUpProvider,
-  usePopUpStatus,
-  usePopUpUpdateStatus,
-  usePopUpContent,
-  usePopUpUpdateContent,
-} from "../../context/popUpWindowContext.jsx";
+import { useModuleUpdateStatus } from "../../context/moduleWindowContext.jsx";
 
 import { useCurWindowUpdateState } from "../content/contentWindowContext";
 
 export default function NavButton(props) {
   const setWindow = useCurWindowUpdateState();
-  const togglePopUp = usePopUpUpdateStatus();
+  const togglePopUp = useModuleUpdateStatus();
 
   function helperFunction() {
     setWindow(props.title);

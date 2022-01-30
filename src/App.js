@@ -7,7 +7,7 @@ import CivDots from "./routes/civdots";
 import ToBuyList from "./routes/toBuyList";
 import DropDownTest from "./firebase/dropDownTemplate";
 
-import { PopUpProvider } from "./context/popUpWindowContext";
+import { ModuleProvider } from "./context/moduleWindowContext";
 import {
   ContextWindowProvider,
   useCurWindowState,
@@ -17,7 +17,7 @@ export default function App() {
   const curWindow = useCurWindowState();
   return (
     <div style={styles.all}>
-      <PopUpProvider>
+      <ModuleProvider>
         <div style={styles.navWindow}>
           <NavigationWindow />
         </div>
@@ -31,7 +31,7 @@ export default function App() {
             tester: <DropDownTest />,
           }[curWindow] || <ContentHome />}
         </div>
-      </PopUpProvider>
+      </ModuleProvider>
     </div>
   );
 }

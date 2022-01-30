@@ -30,17 +30,15 @@ import Trimble from "../../routes/modules/trimble";
 import WiFi from "../../routes/modules/wifi";
 
 // importing the contexts
-import PopUpProvider, {
-  usePopUpStatus,
-  usePopUpUpdateStatus,
-  usePopUpContent,
-  usePopUpUpdateContent,
-} from "../../context/popUpWindowContext";
+import {
+  useModuleUpdateStatus,
+  useModuleContent,
+} from "../../context/moduleWindowContext";
 
-export default function PopUpWindow() {
-  const togglePopUp = usePopUpUpdateStatus();
+export default function ModulesPopUpWindow() {
+  const togglePopUp = useModuleUpdateStatus();
 
-  const curPopUpWindow = usePopUpContent();
+  const curPopUpWindow = useModuleContent();
 
   return (
     <div style={styles.popUpBox}>

@@ -1,11 +1,11 @@
 import React from "react";
 import { useCurWindowUpdateState } from "./contentWindowContext";
-import { usePopUpUpdateStatus } from "../../context/popUpWindowContext";
+import { useModuleUpdateStatus } from "../../context/moduleWindowContext";
 
 export default function HomeTab(props) {
   const title = props.title;
   const updateContentState = useCurWindowUpdateState();
-  const resetBackToModuleLists = usePopUpUpdateStatus(false);
+  const resetBackToModuleLists = useModuleUpdateStatus(false);
   function helperFunction() {
     updateContentState(title);
     resetBackToModuleLists();

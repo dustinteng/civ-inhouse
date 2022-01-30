@@ -1,15 +1,12 @@
 import React from "react";
 import {
-  PopUpProvider,
-  usePopUpStatus,
-  usePopUpUpdateStatus,
-  usePopUpContent,
-  usePopUpUpdateContent,
-} from "../../context/popUpWindowContext.jsx";
+  useModuleUpdateStatus,
+  useModuleUpdateContent,
+} from "../../context/moduleWindowContext.jsx";
 
 export default function ModuleButton(props) {
-  const popUpWindowUpdateState = usePopUpUpdateStatus();
-  const setCurPopUpWindow = usePopUpUpdateContent();
+  const popUpWindowUpdateState = useModuleUpdateStatus();
+  const setCurPopUpWindow = useModuleUpdateContent();
 
   const color = props.color;
   const title = props.title;
