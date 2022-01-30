@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurWindowUpdateState } from "./contentWindowContext";
+import { useCurWindowUpdateState } from "../../context/contentWindowContext";
 import { useModuleUpdateStatus } from "../../context/moduleWindowContext";
 
 export default function HomeTab(props) {

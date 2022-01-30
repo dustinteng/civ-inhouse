@@ -2,7 +2,7 @@ import React from "react";
 
 import { useModuleUpdateStatus } from "../../context/moduleWindowContext.jsx";
 
-import { useCurWindowUpdateState } from "../content/contentWindowContext";
+import { useCurWindowUpdateState } from "../../context/contentWindowContext";
 
 export default function NavButton(props) {
   const setWindow = useCurWindowUpdateState();

@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 
 import NavButton from "./navButton.jsx";
-import { useCurWindowUpdateState } from "../content/contentWindowContext";
+import { useCurWindowUpdateState } from "../../context/contentWindowContext";
 
 const imagePath = "/assets/images/webpage/";
 

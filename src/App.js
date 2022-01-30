@@ -11,7 +11,7 @@ import { ModuleProvider } from "./context/moduleWindowContext";
 import {
   ContextWindowProvider,
   useCurWindowState,
-} from "./component/content/contentWindowContext";
+} from "./context/contentWindowContext";
 
 export default function App() {
   const curWindow = useCurWindowState();
