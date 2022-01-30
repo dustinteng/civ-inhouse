@@ -26,15 +26,15 @@ export function useModuleUpdateContent() {
 }
 
 export function ModuleProvider({ children }) {
-  const [isPopUpWindowOpen, setIsPopUpWindowOpen] = useState(false);
+  const [isModuleWindowOpen, setIsModuleWindowOpen] = useState(false);
   function togglePopUp() {
-    setIsPopUpWindowOpen((cur) => !cur);
+    setIsModuleWindowOpen((cur) => !cur);
   }
   const [curPopUpWindow, setCurPopUpWindow] = useState("home");
 
   return (
-    <ModuleStateContext.Provider value={isPopUpWindowOpen}>
-      <ModuleUpdateStateContext.Provider value={setIsPopUpWindowOpen}>
+    <ModuleStateContext.Provider value={isModuleWindowOpen}>
+      <ModuleUpdateStateContext.Provider value={setIsModuleWindowOpen}>
         <ModuleContentContext.Provider value={curPopUpWindow}>
           <ModuleUpdateContentContext.Provider value={setCurPopUpWindow}>
             {children}
