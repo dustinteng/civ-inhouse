@@ -7,11 +7,12 @@ import CivDots from "./routes/civdots";
 import ToBuyList from "./routes/toBuyList";
 import DropDownTest from "./firebase/dropDownTemplate";
 
-import { ModuleProvider } from "./context/moduleWindowContext";
 import {
   ContextWindowProvider,
   useCurWindowState,
 } from "./context/contentWindowContext";
+import { ModuleProvider } from "./context/moduleWindowContext";
+import { CivDotProvider } from "./context/civdotWindowContext";
 
 export default function App() {
   const curWindow = useCurWindowState();
@@ -20,17 +21,20 @@ export default function App() {
       <div style={styles.navWindow}>
         <NavigationWindow />
       </div>
+
       <ModuleProvider>
-        <div style={styles.content}>
-          {{
-            Home: <ContentHome />,
-            Modules: <Modules />,
-            Inventory: <Inventory />,
-            CivDots: <CivDots />,
-            "To Buy List": <ToBuyList />,
-            tester: <DropDownTest />,
-          }[curWindow] || <ContentHome />}
-        </div>
+        <CivDotProvider>
+          <div style={styles.content}>
+            {{
+              Home: <ContentHome />,
+              Modules: <Modules />,
+              Inventory: <Inventory />,
+              CivDots: <CivDots />,
+              "To Buy List": <ToBuyList />,
+              tester: <DropDownTest />,
+            }[curWindow] || <ContentHome />}
+          </div>
+        </CivDotProvider>
       </ModuleProvider>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 
 import ContentHome from "../../component/content/contentHome";
 
@@ -57,7 +57,11 @@ export default function ModulesPopUpWindow() {
           "CIV Repeater": <CivRepeater />,
           FAQ: <FAQ />,
           Gantry: <Gantry />,
-          Home: <ContentHome />,
+          Home: (
+            <div>
+              <p>no values here</p>
+            </div>
+          ),
           Jetson: <Jetson />,
           Lidar: <Lidar />,
           "Motor Controller": <MotorController />,

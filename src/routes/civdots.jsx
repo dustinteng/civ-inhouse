@@ -1,32 +1,41 @@
 import Headers from "../component/content/headers.jsx";
-import { Dropdown } from "../firebase/dropdown.jsx";
 import CivDotArchive from "./civdots/civdotArchive.jsx";
-import { useState } from "react";
-//import style
+import CivDotsPopUpWindow from "./civdots/civdotsPopUpWindow.jsx";
 
+import { useCivDotStatus } from "../context/civdotWindowContext.jsx";
+import CivDotButton from "../component/content/civdotButton.jsx";
 import { GlobalStyles } from "../globalStyles";
+
 export default function CivDots() {
-  const [popUpWindow, setPopUpWindow] = useState(false);
+  const CivDotState = useCivDotStatus();
 
   return (
     <div style={GlobalStyles.safeArea}>
       <Headers title={"Civ Dots :"} />
-      <div style={styles.civDotContainer1}>
+      <CivDotButton />
+      {/* <div style={styles.CivDotStateContainer}>
+        {CivDotState ? <CivDotsPopUpWindow /> : <CivDotArchive />}
+      </div> */}
+      {/* <div style={styles.civDotContainer1}>
         <div style={styles.civDotContainer2}>
           {" "}
           <h3> in house </h3>
-          {/* <button onClick = {}></button> */}
         </div>
         <div style={styles.civDotContainer2}>
           {" "}
           <h3> in asdasd </h3>{" "}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
 
 const styles = {
+  CivDotWindowContainer: {
+    width: "100%",
+    height: "80%",
+    padding: "10px 10px",
+  },
   civDotContainer1: {
     display: "flex",
     flexDirection: "column",

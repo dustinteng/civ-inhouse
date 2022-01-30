@@ -27,16 +27,14 @@ export function useCivDotUpdateContent() {
 
 export function CivDotProvider({ children }) {
   const [isCivDotWindowOpen, setIsCivDotWindowOpen] = useState(false);
-  function togglePopUp() {
-    setIsCivDotWindowOpen((cur) => !cur);
-  }
-  const [curPopUpWindow, setCurPopUpWindow] = useState("home");
+
+  const [curCivDotWindow, setCurCivDotWindow] = useState("home");
 
   return (
     <CivDotStateContext.Provider value={isCivDotWindowOpen}>
       <CivDotUpdateStateContext.Provider value={setIsCivDotWindowOpen}>
-        <CivDotContentContext.Provider value={curPopUpWindow}>
-          <CivDotUpdateContentContext.Provider value={setCurPopUpWindow}>
+        <CivDotContentContext.Provider value={curCivDotWindow}>
+          <CivDotUpdateContentContext.Provider value={setCurCivDotWindow}>
             {children}
           </CivDotUpdateContentContext.Provider>
         </CivDotContentContext.Provider>
