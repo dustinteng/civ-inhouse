@@ -5,7 +5,7 @@ export default function ModuleFullList() {
     <div style={styles.moduleButtonsContainer1}>
       <div style={styles.moduleButtonsContainer2}>
         {/* spread operator hasn't been implemented */}
-        <ModuleButton color={"blue"} title={"Antenna"} />
+        <ModuleButton color={"blue"} title={"Antennas"} />
         <ModuleButton color={"blue"} title={"ArduSimple"} />
         <ModuleButton color={"blue"} title={"Box"} />
         <ModuleButton color={"blue"} title={"Calibration"} />

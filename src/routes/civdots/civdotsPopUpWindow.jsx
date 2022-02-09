@@ -3,17 +3,30 @@ import {
   useCivDotContent,
 } from "../../context/civdotWindowContext";
 
+import AddNewCivDot from "./addNewCivDot";
+import RoverInfo from "./roverInfo";
+import ContentHome from "../../component/content/contentHome";
+
+import { GlobalStyles } from "../../globalStyles";
 export default function CivDotsPopUpWindow() {
   const togglePopUp = useCivDotUpdateStatus();
 
   const curPopUpWindow = useCivDotContent();
   return (
-    <div style={styles.popUpBox}>
-      <div style={styles.box}>
-        <button style={styles.buttonClose} onClick={() => togglePopUp(false)}>
+    <div style={GlobalStyles.popUpBox}>
+      <div style={GlobalStyles.box}>
+        <button
+          style={GlobalStyles.buttonClose}
+          onClick={() => togglePopUp(false)}
+        >
           {" "}
-          x{" "}
+          X{" "}
         </button>
+        {{
+          "+": <AddNewCivDot />,
+          CivDot1: <RoverInfo roverName="CivDot1" />,
+          CivDot2: <RoverInfo roverName="CivDot2" />,
+        }[curPopUpWindow] || <ContentHome />}
       </div>
     </div>
   );

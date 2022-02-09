@@ -1,20 +1,20 @@
 import { useState } from "react";
+import { GlobalPageStyles } from "../globalPageStyles";
 
 export const Dropdown = (props) => {
-  const [value, setValue] = useState("one"); //default value
-
+  const [value, setValue] = useState("");
+  const callback = props.callback;
   function handleSelectChange(event) {
+    callback(event.target.value);
     setValue(event.target.value);
   }
 
   return (
-    <div>
+    <div style={GlobalPageStyles.questionContainer}>
+      <p>{props.title}</p>
       <select value={value} onChange={handleSelectChange}>
-        {" "}
-        //set value here
         {props.children}
       </select>
-      <p>the value is {value}</p>
     </div>
   );
 };

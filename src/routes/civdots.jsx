@@ -1,6 +1,7 @@
 import Headers from "../component/content/headers.jsx";
-import CivDotArchive from "./civdots/civdotArchive.jsx";
+import CivDotArchive from "./civdots/addNewCivDot.jsx";
 import CivDotsPopUpWindow from "./civdots/civdotsPopUpWindow.jsx";
+import CivDotFullList from "./civdots/civdotFullList.jsx";
 
 import { useCivDotStatus } from "../context/civdotWindowContext.jsx";
 import CivDotButton from "../component/content/civdotButton.jsx";
@@ -12,20 +13,9 @@ export default function CivDots() {
   return (
     <div style={GlobalStyles.safeArea}>
       <Headers title={"Civ Dots :"} />
-      <CivDotButton />
-      {/* <div style={styles.CivDotStateContainer}>
-        {CivDotState ? <CivDotsPopUpWindow /> : <CivDotArchive />}
-      </div> */}
-      {/* <div style={styles.civDotContainer1}>
-        <div style={styles.civDotContainer2}>
-          {" "}
-          <h3> in house </h3>
-        </div>
-        <div style={styles.civDotContainer2}>
-          {" "}
-          <h3> in asdasd </h3>{" "}
-        </div>
-      </div> */}
+      <div style={styles.CivDotWindowContainer}>
+        {CivDotState ? <CivDotsPopUpWindow /> : <CivDotFullList />}
+      </div>
     </div>
   );
 }

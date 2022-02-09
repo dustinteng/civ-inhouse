@@ -3,7 +3,7 @@ import React from "react";
 export default function Description({ children }) {
   return (
     <div style={styles.descriptionContainer}>
-      <p>{children}</p>
+      <text>{children}</text>
     </div>
   );
 }

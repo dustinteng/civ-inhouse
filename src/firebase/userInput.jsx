@@ -1,14 +1,16 @@
-export function UserInput() {
+import { GlobalPageStyles } from "../globalPageStyles";
+
+export function UserInput(props) {
   return (
-    <div>
-      <form>
-        <label>
-          Name:
-          <input type="text" name="name" />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-      ;
+    <div style={GlobalPageStyles.questionContainer}>
+      <label>
+        {props.title}
+        <input
+          value={props.value}
+          onfocus={props.onfocus}
+          onChange={(e) => props.callback(e)}
+        ></input>
+      </label>
     </div>
   );
 }

@@ -10,8 +10,12 @@ export default function CivDotButton(props) {
 
   const title = props.title;
 
+  function togglePopUp() {
+    setCivDotWindowState((a) => !a);
+  }
+
   function helperFunction() {
-    setCivDotWindowState(true);
+    togglePopUp();
     setCurCivDotWindow(title);
   }
   return (
@@ -31,8 +35,8 @@ const styles = {
   buttons: {
     padding: "5px 10px",
     backgroundColor: "#FFCEA4",
-    width: "100%",
-    height: "35px",
+    width: "150px",
+    height: "200px",
     borderRadius: "20px",
     cursor: "pointer",
   },

@@ -5,9 +5,22 @@ import Description from "../../component/popUpContent/description";
 import ImageContainer from "../../component/popUpContent/imageContainer";
 import ContentContainer from "../../component/popUpContent/contentContainer";
 import ContentSubHeader from "../../component/popUpContent/contentSubHeader";
+import Table from "../../component/popUpContent/table";
+import Footer from "../../component/popUpContent/footer";
+import { GlobalPageStyles } from "../../globalPageStyles";
+import { GlobalStyles } from "../../globalStyles";
 
 // this will go directly to public folder!
 const imagePath = "box/";
+const holeData = [
+  { hole: "1.5 in", loc: "Special - CivDotPlus Gantry and IMU Hole" },
+
+  { hole: "1 in", loc: "Bottom Box, Metal Plate, Fan Hole" },
+  { hole: "7/8 in", loc: "Emergency Switch Hole" },
+  { hole: "1/4 in", loc: "Antennas Connection Hole" },
+  { hole: "11/64 in", loc: "Box to Chassis Connection Hole" },
+  { hole: "1/8 in", loc: "Fan Bolts Hole" },
+];
 export default function Box() {
   return (
     <div style={styles.infoBox}>
@@ -25,45 +38,61 @@ export default function Box() {
       </Description>
 
       <ContentSubHeader>1. Box Sizes</ContentSubHeader>
-      <ContentContainer>
-        <il>
-          <ul>1. small box - CivDot</ul>
-          <ul>2. large box - CivDot+</ul>
-        </il>
-      </ContentContainer>
-      <ContentSubHeader>2. Location and size of the holes </ContentSubHeader>
-      <ContentContainer>
-        <div style={styles.subsubheader}>CivDot</div>
-        <div style={styles.subContentContainer}>
+      <div style={GlobalPageStyles.divideContainer}>
+        <div styles={GlobalPageStyles.container1unit}>
+          <ImageContainer
+            title="1. CivDot Box"
+            img={imagePath + "civdot/civdotCircuit.jpeg"}
+          ></ImageContainer>
+        </div>
+        <div styles={GlobalPageStyles.container1unit}>
+          <ImageContainer
+            title="2. CivDot Plus Box"
+            img={imagePath + "civdot/civdotCircuit.jpeg"}
+          ></ImageContainer>
+        </div>
+      </div>
+
+      <Table data={holeData} title="2. Location and size of the holes" />
+
+      <ContentSubHeader> CivDots </ContentSubHeader>
+
+      <div style={GlobalPageStyles.divideContainer}>
+        <div style={GlobalPageStyles.container1unit}>
           <ImageContainer
             title="bottom hole - 1in drill hole"
             img={imagePath + "civdot/bottomhole.jpeg"}
           ></ImageContainer>
+        </div>
+        <div style={GlobalPageStyles.container1unit}>
           <ImageContainer
             title="fan hole - 1in drill hole"
             img={imagePath + "civdot/fanhole.jpeg"}
           ></ImageContainer>
         </div>
-        <div style={styles.subContentContainer}>
+        <div style={GlobalPageStyles.container1unit}>
           <ImageContainer
             title="metal plate hole - 1in drill hole"
             img={imagePath + "civdot/metalplatehole.jpeg"}
           ></ImageContainer>
         </div>
-      </ContentContainer>
-      <ContentContainer>
-        <div style={styles.subsubheader}>CivDot+</div>
-        <div style={styles.subContentContainer}>
-          <ImageContainer
-            title="bottom hole - 1in drill hole"
-            img={imagePath + "civdot/bottomhole.jpeg"}
-          ></ImageContainer>
+      </div>
+      <ContentSubHeader>CivDot +</ContentSubHeader>
+
+      <div style={GlobalPageStyles.divideContainer}>
+        <div style={GlobalPageStyles.container1unit}>
           <ImageContainer
             title="fan hole - 1in drill hole"
             img={imagePath + "civdot/fanhole.jpeg"}
           ></ImageContainer>
         </div>
-      </ContentContainer>
+        <div style={GlobalPageStyles.container1unit}>
+          <ImageContainer
+            title="bottom hole - 1in drill hole"
+            img={imagePath + "civdot/bottomhole.jpeg"}
+          ></ImageContainer>
+        </div>
+      </div>
 
       <div style={styles.imagesContainer}>
         <ImageContainer
@@ -74,6 +103,10 @@ export default function Box() {
           title="Drill Bits"
           img={imagePath + "drillbits.png"}
         ></ImageContainer>
+      </div>
+      {/* footer */}
+      <div style={GlobalPageStyles.divideContainer}>
+        <Footer />
       </div>
     </div>
   );

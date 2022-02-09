@@ -4,14 +4,17 @@ import ImageContainer from "../../component/popUpContent/imageContainer";
 import ContentSubHeader from "../../component/popUpContent/contentSubHeader";
 import LinkNewWindow from "../../component/popUpContent/linkNewWindow";
 
-const imagePath = "/assets/images/ardusimple/";
+import { GlobalStyles } from "../../globalStyles";
+import { GlobalPageStyles } from "../../globalPageStyles";
+
+const imagePath = "/ardusimple/";
 const movingBaseLink =
   "https://drive.google.com/file/d/1iawfKmAtfPPWpMk2EZIzHC0AdqnwIpZS/view?usp=sharing";
 const roverBaseLink =
   "https://drive.google.com/file/d/1Iexb7KEFtwX8z_o_WG52YSPpmDpHxzrb/view?usp=sharing";
 export default function ArduSimple() {
   return (
-    <div style={styles.infoBox}>
+    <div style={GlobalStyles.contentContainer}>
       <Header>ArduSimple Boards</Header>
       <Description>
         There are two Ardusimple units (SimpleRTK2B V3 and SimpleRTK2Blite), we
@@ -21,8 +24,8 @@ export default function ArduSimple() {
         RTK setup for the rover yaw estimation
       </Description>
 
-      <div style={styles.content}>
-        <div style={styles.subcontainer}>
+      <div style={GlobalPageStyles.divideContainer}>
+        <div style={GlobalPageStyles.container1unit}>
           <ContentSubHeader>Configuration Files :</ContentSubHeader>
           <LinkNewWindow link={movingBaseLink}>
             Moving Base Configuration
@@ -38,11 +41,24 @@ export default function ArduSimple() {
             Rover Base Configuration
           </LinkNewWindow>
         </div>
-        <div style={styles.subcontainer}>
-          <img
-            style={styles.img}
-            src={imagePath + "ardusimpleboards.png"}
-          ></img>
+        <div style={GlobalPageStyles.container1unit}>
+          <ImageContainer
+            height="300px"
+            width="300px"
+            img={imagePath + "ardusimpleboards.png"}
+          ></ImageContainer>
+        </div>
+      </div>
+      <ContentSubHeader>Step by Step Configuration:</ContentSubHeader>
+
+      <div style={GlobalPageStyles.divideContainer}>
+        <div style={GlobalPageStyles.container1unit}>
+          {" "}
+          <contentContainer>asdasd</contentContainer>
+        </div>
+        <div style={GlobalPageStyles.container1unit}>
+          {" "}
+          <contentContainer>asdasd</contentContainer>
         </div>
       </div>
     </div>
