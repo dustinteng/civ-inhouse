@@ -17,7 +17,7 @@ export default function ImageContainer(props) {
     },
 
     imageContainer: {
-      backgroundColor: "white",
+      backgroundColor: "transparent",
       width: "90%",
       height: "90%",
       display: "flex",

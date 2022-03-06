@@ -12,9 +12,20 @@ export const Dropdown = (props) => {
   return (
     <div style={GlobalPageStyles.questionContainer}>
       <p>{props.title}</p>
-      <select value={value} onChange={handleSelectChange}>
-        {props.children}
-      </select>
+      <div style={styles.centeringBox}>
+        <select value={value} onChange={handleSelectChange}>
+          {props.children}
+        </select>
+      </div>
     </div>
   );
+};
+
+const styles = {
+  centeringBox: {
+    display: "flex",
+    flexDirection: "column",
+    flexDirection: "center",
+    alignItems: "center",
+  },
 };

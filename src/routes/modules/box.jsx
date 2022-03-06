@@ -5,7 +5,7 @@ import Description from "../../component/popUpContent/description";
 import ImageContainer from "../../component/popUpContent/imageContainer";
 import ContentContainer from "../../component/popUpContent/contentContainer";
 import ContentSubHeader from "../../component/popUpContent/contentSubHeader";
-import Table from "../../component/popUpContent/table";
+import HoleLocationTable from "../../component/popUpContent/table/holeLocationTable";
 import Footer from "../../component/popUpContent/footer";
 import { GlobalPageStyles } from "../../globalPageStyles";
 import { GlobalStyles } from "../../globalStyles";
@@ -53,7 +53,10 @@ export default function Box() {
         </div>
       </div>
 
-      <Table data={holeData} title="2. Location and size of the holes" />
+      <HoleLocationTable
+        data={holeData}
+        title="2. Location and size of the holes"
+      />
 
       <ContentSubHeader> CivDots </ContentSubHeader>
 

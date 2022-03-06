@@ -7,7 +7,7 @@ import { ContextWindowProvider } from "./context/contentWindowContext";
 
 const rootElement = document.getElementById("root");
 render(
-  <body
+  <div
     style={{
       position: "absolute",
       overflow: "hidden",
@@ -37,6 +37,6 @@ render(
         </Routes>
       </BrowserRouter>
     </ContextWindowProvider>
-  </body>,
+  </div>,
   rootElement
 );

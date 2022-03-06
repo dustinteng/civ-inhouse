@@ -1,9 +1,9 @@
 export const GlobalStyles = {
   //Overall safe area container
   safeArea: {
-    padding: "20px 50px",
+    margin: "20px 50px",
     display: "flex",
-    width: "100%",
+    width: "90%",
     height: "100%",
     scrollBehaviour: "smooth",
     flexDirection: "column",

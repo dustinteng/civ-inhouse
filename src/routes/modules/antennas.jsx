@@ -5,7 +5,7 @@ import ImageContainer from "../../component/popUpContent/imageContainer";
 import ContentSubHeader from "../../component/popUpContent/contentSubHeader";
 import ContentContainer from "../../component/popUpContent/contentContainer";
 import LinkNewWindow from "../../component/popUpContent/linkNewWindow";
-import PartListTable from "../../component/popUpContent/partListTable";
+import PartListTable from "../../component/popUpContent/table/partListTable";
 
 import { GlobalStyles } from "../../globalStyles";
 import { GlobalPageStyles } from "../../globalPageStyles";
@@ -36,8 +36,8 @@ export default function Antennas() {
     <div style={GlobalStyles.contentContainer}>
       <Header>Antennas</Header>
       <Description>
-        The antennas CIV Robotics are using are low power, dual-band global
-        positioning system/global navigation satellite system (GPS/GNSS)
+        The antennas CIV Robotics rovers are using are low power, dual-band
+        global positioning system/global navigation satellite system (GPS/GNSS)
         antennas. The antennas achieve centimeter-level accuracy with a
         real-time kinematic (RTK) receiver. The product offering includes
         survey, helical, and OEM antennas. ArduSimple simpleANT2B Antennas are a
@@ -197,13 +197,17 @@ export default function Antennas() {
           <div style={GlobalPageStyles.contentContainer}>
             <div style={GlobalPageStyles.textContainer}>
               <p>ArduSimple:</p>
-              <text> Front Antenna === Rover Base</text>
-              <text> Rear Antenna === Moving Base</text>
-              <text> </text>
+              <div style={GlobalPageStyles.container1unit}>
+                <text> Rear Antenna === Moving Base</text>
+                <text> Front Antenna === Rover Base</text>
+              </div>
 
               <p>Mission Planner:</p>
-              <text> Front Antenna === Bottom GPS</text>
-              <text> Rear Antenna === Top GPS</text>
+              <div style={GlobalPageStyles.container1unit}>
+                <text> Rear Antenna === Top GPS</text>
+                <text> Front Antenna === Bottom GPS</text>
+              </div>
+
               <text> </text>
             </div>
           </div>

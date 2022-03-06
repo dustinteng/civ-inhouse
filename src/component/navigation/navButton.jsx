@@ -1,17 +1,23 @@
 import React from "react";
 
+import { useInventoryUpdateStatus } from "../../context/inventoryWindowContext.jsx";
 import { useModuleUpdateStatus } from "../../context/moduleWindowContext.jsx";
-
+import { useCivDotUpdateStatus } from "../../context/civdotWindowContext.jsx";
 import { useCurWindowUpdateState } from "../../context/contentWindowContext";
 
 export default function NavButton(props) {
   const setWindow = useCurWindowUpdateState();
-  const togglePopUp = useModuleUpdateStatus();
+  const toggleModulePopUp = useModuleUpdateStatus();
+  const toggleCivDotsPopUp = useCivDotUpdateStatus();
+  const toggleInventoryPopUp = useInventoryUpdateStatus();
 
   function helperFunction() {
     setWindow(props.title);
-    togglePopUp(false);
+    toggleModulePopUp(false);
+    toggleCivDotsPopUp(false);
+    toggleInventoryPopUp(false);
   }
+
   return (
     <div>
       <button style={styles.button} onClick={helperFunction}>

@@ -1,6 +1,6 @@
-import { GlobalPageStyles } from "../globalPageStyles";
+import { GlobalPageStyles } from "../../globalPageStyles";
 
-export function UserInput(props) {
+export function Info(props) {
   return (
     <div style={GlobalPageStyles.questionContainer}>
       <p>
@@ -8,10 +8,7 @@ export function UserInput(props) {
       </p>
       <div style={styles.centeringBox}>
         <label>
-          <input
-            value={props.value}
-            onChange={(e) => props.callback(e)}
-          ></input>
+          <p> {props.value}</p>
         </label>
       </div>
     </div>

@@ -52,14 +52,8 @@ export default function ArduSimple() {
       <ContentSubHeader>Step by Step Configuration:</ContentSubHeader>
 
       <div style={GlobalPageStyles.divideContainer}>
-        <div style={GlobalPageStyles.container1unit}>
-          {" "}
-          <contentContainer>asdasd</contentContainer>
-        </div>
-        <div style={GlobalPageStyles.container1unit}>
-          {" "}
-          <contentContainer>asdasd</contentContainer>
-        </div>
+        <div style={GlobalPageStyles.container1unit}> </div>
+        <div style={GlobalPageStyles.container1unit}> </div>
       </div>
     </div>
   );

@@ -13,27 +13,29 @@ import {
 } from "./context/contentWindowContext";
 import { ModuleProvider } from "./context/moduleWindowContext";
 import { CivDotProvider } from "./context/civdotWindowContext";
-
+import { InventoryProvider } from "./context/inventoryWindowContext";
 export default function App() {
   const curWindow = useCurWindowState();
   return (
     <div style={styles.all}>
       <ModuleProvider>
         <CivDotProvider>
-          <div style={styles.navWindow}>
-            <NavigationWindow />
-          </div>
+          <InventoryProvider>
+            <div style={styles.navWindow}>
+              <NavigationWindow />
+            </div>
 
-          <div style={styles.content}>
-            {{
-              Home: <ContentHome />,
-              Modules: <Modules />,
-              Inventory: <Inventory />,
-              CivDots: <CivDots />,
-              "To Buy List": <ToBuyList />,
-              tester: <DropDownTest />,
-            }[curWindow] || <ContentHome />}
-          </div>
+            <div style={styles.content}>
+              {{
+                Home: <ContentHome />,
+                Modules: <Modules />,
+                Inventory: <Inventory />,
+                CivDots: <CivDots />,
+                "To Buy List": <ToBuyList />,
+                tester: <DropDownTest />,
+              }[curWindow] || <ContentHome />}
+            </div>
+          </InventoryProvider>
         </CivDotProvider>
       </ModuleProvider>
     </div>
@@ -49,12 +51,13 @@ const styles = {
   navWindow: {
     display: "flex",
     flexDirection: "column",
-    width: "200px",
+
+    flex: "1",
   },
   content: {
     display: "flex",
     backgroundColor: "#FFF5ED",
-    flex: 3,
+    flex: "7",
     height: "100%",
     width: "100%",
   },

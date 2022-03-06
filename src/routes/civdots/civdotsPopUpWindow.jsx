@@ -8,10 +8,11 @@ import RoverInfo from "./roverInfo";
 import ContentHome from "../../component/content/contentHome";
 
 import { GlobalStyles } from "../../globalStyles";
+
 export default function CivDotsPopUpWindow() {
   const togglePopUp = useCivDotUpdateStatus();
-
   const curPopUpWindow = useCivDotContent();
+
   return (
     <div style={GlobalStyles.popUpBox}>
       <div style={GlobalStyles.box}>
@@ -23,51 +24,29 @@ export default function CivDotsPopUpWindow() {
           X{" "}
         </button>
         {{
-          "+": <AddNewCivDot />,
-          CivDot1: <RoverInfo roverName="CivDot1" />,
-          CivDot2: <RoverInfo roverName="CivDot2" />,
+          "add new rover": <AddNewCivDot />,
+          "CivDot 1": <RoverInfo roverName="CivDot 1" />,
+          "CivDot 2": <RoverInfo roverName="CivDot 2" />,
+          "CivDot 3": <RoverInfo roverName="CivDot 3" />,
+          "CivDot 4": <RoverInfo roverName="CivDot 4" />,
+          "CivDot 5": <RoverInfo roverName="CivDot 5" />,
+          "CivDot 6": <RoverInfo roverName="CivDot 6" />,
+          "CivDot 7": <RoverInfo roverName="CivDot 7" />,
+          "CivDot 8": <RoverInfo roverName="CivDot 8" />,
+          "CivDot 9": <RoverInfo roverName="CivDot 9" />,
+          "CivDot 10": <RoverInfo roverName="CivDot 10" />,
+          "CivDot 11": <RoverInfo roverName="CivDot 11" />,
+          "CivDot 12": <RoverInfo roverName="CivDot 12" />,
+          "CivDot 13": <RoverInfo roverName="CivDot 13" />,
+          "CivDot 14": <RoverInfo roverName="CivDot 14" />,
+          "CivDot 15": <RoverInfo roverName="CivDot 15" />,
+          "CivDot 16": <RoverInfo roverName="CivDot 16" />,
+
+          "CivDot 100": <RoverInfo roverName="CivDot 100" />,
+
+          "CivDot #": <RoverInfo roverName="CivDot #" />,
         }[curPopUpWindow] || <ContentHome />}
       </div>
     </div>
   );
 }
-
-const styles = {
-  popUpBox: {
-    display: "flex",
-    position: "relative",
-    justifyContent: "center",
-    backgroundColor: "#FFCEA4",
-    width: "95%",
-    height: "95%",
-    padding: "2% 2%",
-    borderRadius: "5px",
-  },
-  box: {
-    position: "relative",
-    width: "100%",
-    height: "100%",
-    backgroundColor: "#fff",
-    border: "1px solid #999",
-    borderRadius: "4px",
-    padding: "0px 20px",
-    marginBottom: "5px",
-    overflow: "auto",
-  },
-  buttonClose: {
-    width: "30px",
-    height: "30px",
-    position: "sticky",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    cursor: "pointer",
-    border: "2px solid #3b1800",
-    borderRadius: "50%",
-    left: "calc( 100% - 20px )",
-    top: "10px",
-    backgroundColor: "darkOrange",
-    color: "#3b1800",
-    fontSize: "20px",
-  },
-};

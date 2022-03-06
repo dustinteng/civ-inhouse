@@ -4,14 +4,18 @@ import {
   useCivDotUpdateContent,
 } from "../../context/civdotWindowContext.jsx";
 
+import { GlobalPageStyles } from "../../globalPageStyles.jsx";
+import ImageContainer from "../popUpContent/imageContainer.jsx";
+
 export default function CivDotButton(props) {
   const setCivDotWindowState = useCivDotUpdateStatus();
   const setCurCivDotWindow = useCivDotUpdateContent();
+  const imagePath = "antenna/";
 
   const title = props.title;
 
   function togglePopUp() {
-    setCivDotWindowState((a) => !a);
+    setCivDotWindowState((state) => !state);
   }
 
   function helperFunction() {
@@ -21,8 +25,14 @@ export default function CivDotButton(props) {
   return (
     <div style={styles.buttonsSAV}>
       <button style={styles.buttons} onClick={helperFunction}>
-        {" "}
-        {title}{" "}
+        <div
+          style={{
+            ...GlobalPageStyles.contentContainer,
+            textDecoration: "underline",
+          }}
+        >
+          {title}
+        </div>
       </button>
     </div>
   );
