@@ -28,15 +28,15 @@ export function MultipleAnswers(props) {
         </div>
       </div>
       <div style={GlobalPageStyles.questionContainer}>
-        <button type="button" onClick={addEntryClick} value={curAns}>
-          add
-        </button>
         <div>
           {theArray.map((rover, key) => {
             // console.log(key, rover);
-            return <li>{rover}</li>;
+            return <li key={key}>{rover}</li>;
           })}
         </div>
+        <button type="button" onClick={addEntryClick} value={curAns}>
+          add
+        </button>
       </div>
     </div>,
   ];

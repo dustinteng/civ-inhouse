@@ -8,7 +8,16 @@ const InventoryUpdateStateContext = React.createContext();
 const InventoryContentContext = React.createContext();
 const InventoryUpdateContentContext = React.createContext();
 
+// window for part information page open / not
+const PartInfoCollectionContext = React.createContext();
+const PartUpdateInfoCollectionContext = React.createContext();
+
+// window for part information window content
+const PartInfoContentContext = React.createContext();
+const PartUpdateInfoContentContext = React.createContext();
+
 // creating functions
+// inventory
 export function useInventoryStatus() {
   return useContext(InventoryStateContext);
 }
@@ -24,18 +33,45 @@ export function useInventoryContent() {
 export function useInventoryUpdateContent() {
   return useContext(InventoryUpdateContentContext);
 }
+// part name and collection contexts
+export function usePartCollectionStatus() {
+  return useContext(PartInfoCollectionContext);
+}
+
+export function useUpdatePartCollectionStatus() {
+  return useContext(PartUpdateInfoCollectionContext);
+}
+export function usePartName() {
+  return useContext(PartInfoContentContext);
+}
+
+export function usePartNameUpdate() {
+  return useContext(PartUpdateInfoContentContext);
+}
 
 export function InventoryProvider({ children }) {
   const [isInventoryWindowOpen, setIsInventoryWindowOpen] = useState(false);
 
   const [curInventoryWindow, setCurInventoryWindow] = useState("home");
 
+  const [collection, setCollection] = useState("");
+
+  const [partName, setPartName] = useState("");
+
   return (
     <InventoryStateContext.Provider value={isInventoryWindowOpen}>
       <InventoryUpdateStateContext.Provider value={setIsInventoryWindowOpen}>
         <InventoryContentContext.Provider value={curInventoryWindow}>
           <InventoryUpdateContentContext.Provider value={setCurInventoryWindow}>
-            {children}
+            <PartInfoCollectionContext.Provider value={collection}>
+              <PartUpdateInfoCollectionContext.Provider value={setCollection}>
+                <PartInfoContentContext.Provider value={partName}>
+                  <PartUpdateInfoContentContext.Provider value={setPartName}>
+                    {children}
+                  </PartUpdateInfoContentContext.Provider>
+                </PartInfoContentContext.Provider>
+              </PartUpdateInfoCollectionContext.Provider>
+            </PartInfoCollectionContext.Provider>
           </InventoryUpdateContentContext.Provider>
         </InventoryContentContext.Provider>
       </InventoryUpdateStateContext.Provider>

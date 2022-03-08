@@ -38,17 +38,26 @@ export const QueryCall = async (dbPath, logic) => {
 //   return res.data().data;
 // };
 export const GetDocuments = async (dbPath) => {
-  const q = query(collection(db, dbPath));
-  const documents = await getDocs(q);
+  const ref = collection(db, dbPath);
+  const documents = await getDocs(ref);
 
   // documents.docs.forEach((doc) => {
   //   console.log(doc.data().data);
   // });
   return documents.docs;
 };
+export const GetDocumentsUsingRef = async (ref) => {
+  const documents = await getDocs(ref);
 
+  // documents.docs.forEach((doc) => {
+  //   console.log(doc.data().data);
+  // });
+
+  return documents.docs;
+};
 export const DocSnap = async (dbPath, docPath) => {
   const res = await getDoc(doc(db, dbPath, docPath));
+  console.log(res.data());
   return res.data().data;
 };
 export const Send = async (dbPath, docPath, data) => {
@@ -58,13 +67,7 @@ export const Send = async (dbPath, docPath, data) => {
   console.log("data", data);
 };
 
-export const SendInventory = async (ref, data) => {
-  const res = await setDoc(
-    ref,
-    {
-      data,
-    },
-    { merge: true }
-  );
-  console.log("inventory send", data);
+export const SendData = async (ref, data) => {
+  const res = await setDoc(ref, { data }, { merge: true });
+  // console.log("send data", data);
 };

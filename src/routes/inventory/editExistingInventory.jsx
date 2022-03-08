@@ -6,8 +6,6 @@ import { Dropdown } from "../../firebase/dropdown";
 import { UserInput } from "../../firebase/userInput";
 import { MultipleAnswers } from "../../firebase/multipleAnswers";
 import { initializeApp } from "firebase/app";
-import { useInventoryUpdateStatus } from "../../context/inventoryWindowContext";
-
 import {
   getFirestore,
   doc,
@@ -30,9 +28,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const db = getFirestore();
 
-export default function AddNewInventory(props) {
-  const togglePopUp = useInventoryUpdateStatus();
-
+export default function EditExistingInventory(props) {
   const [dbPath, setDbPath] = useState("inventory/parts");
 
   const [admin, setAdmin] = useState("");
@@ -41,21 +37,23 @@ export default function AddNewInventory(props) {
   const [link, setLink] = useState("");
   const [quantity, setQuantity] = useState("");
   const [rovers, setRovers] = useState([]);
-  const [timeStamp, setTimestamp] = useState(Timestamp.now());
+  const [timeStamp, setTimestamp] = useState("");
   const [category, setCategory] = useState("");
   const [made, SetMade] = useState("");
 
-  const data = {
-    admin: admin,
-    id: id,
-    name: name,
-    link: link,
-    quantity: quantity,
-    rovers: rovers,
-    timestamp: timeStamp,
-    category: category,
-    made: false,
-  };
+  const data = [
+    {
+      admin: "",
+      id: "",
+      name: "",
+      link: "",
+      quantity: "",
+      rovers: [],
+      timestamp: "",
+      category: "",
+      made: false,
+    },
+  ];
 
   const handleIDChange = (event) => {
     setId(event.target.value);
@@ -80,12 +78,11 @@ export default function AddNewInventory(props) {
   };
 
   const Send = () => {
-    console.log("timeStamp", timeStamp);
+    setTimestamp(Timestamp.now());
     const ref = doc(db, dbPath, category, id);
     // console.log("data", data);
     hitFirebase.SendData(ref, data);
     cleanInputBox();
-    togglePopUp(false);
   };
   return (
     <div>
